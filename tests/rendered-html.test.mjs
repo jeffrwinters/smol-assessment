@@ -64,6 +64,7 @@ test("renders one adopted-budget compliance answer without scenario choices", as
   assert.doesNotMatch(html, /aria-label="Choose a reserve calculation scenario"/i);
   assert.doesNotMatch(visibleText, /Sensitivity check|Upper-bound check/i);
   assert.match(visibleText, /Maintain at least 15%/i);
+  assert.doesNotMatch(visibleText, /Additional quarterly increase/i);
   assert.match(html, /singlefamily\.fanniemae\.com/i);
   assert.match(html, /guide\.freddiemac\.com/i);
 });

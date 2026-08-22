@@ -850,6 +850,8 @@ summary:focus-visible {
 }
 
 .simple-recommendation {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 760px;
   padding-bottom: 0;
   border-bottom: 0;
 }
@@ -869,46 +871,6 @@ summary:focus-visible {
   color: rgb(255 255 255 / 64%);
   font-size: 1rem;
   line-height: 1.7;
-}
-
-.recommendation-number {
-  padding: 28px;
-  border: 1px solid rgb(255 255 255 / 16%);
-  border-radius: 22px;
-  background: rgb(255 255 255 / 5%);
-}
-
-.recommendation-number span,
-.recommendation-number strong,
-.recommendation-number b,
-.recommendation-number small {
-  display: block;
-}
-
-.recommendation-number span {
-  color: rgb(255 255 255 / 54%);
-  font-size: 0.72rem;
-}
-
-.recommendation-number strong {
-  margin-top: 8px;
-  color: var(--gold);
-  font-size: clamp(2.8rem, 5vw, 4.6rem);
-  letter-spacing: -0.07em;
-  line-height: 1;
-}
-
-.recommendation-number b {
-  margin-top: 14px;
-  color: white;
-  font-size: 0.84rem;
-}
-
-.recommendation-number small {
-  margin-top: 8px;
-  color: rgb(255 255 255 / 46%);
-  font-size: 0.68rem;
-  line-height: 1.45;
 }
 
 .steps-heading {
@@ -1203,10 +1165,6 @@ summary:focus-visible {
 
   .math-total {
     grid-column: auto;
-  }
-
-  .recommendation-number {
-    max-width: 460px;
   }
 
   .steps-grid h3 {

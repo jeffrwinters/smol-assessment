@@ -217,12 +217,6 @@ export default function Home() {
                 income and provides a {money(2912.2, 2)} cushion above the minimum.
               </p>
             </div>
-            <div className="recommendation-number">
-              <span>Additional quarterly increase</span>
-              <strong>{money(0, 2)}</strong>
-              <b>per owner</b>
-              <small>Required solely for the 15% standard.</small>
-            </div>
           </div>
         </div>
       </section>
