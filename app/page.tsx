@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   calculateScenario,
   RESERVE_ALLOCATION,
@@ -206,11 +207,13 @@ export default function Home() {
 
       <section className="evidence-section" aria-labelledby="evidence-title">
         <div className="evidence-photo">
-          <img
+          <Image
             src="/dock-lake.jpg"
             alt="Community dock slips and shoreline at St. Moritz on the Lake"
+            fill
+            sizes="(max-width: 760px) 100vw, 52vw"
           />
-          <p>Reserves protect the property owners share—from shoreline to structure.</p>
+          <p>Reserves protect the property we all share—from shoreline to structure.</p>
         </div>
 
         <div className="evidence-copy">

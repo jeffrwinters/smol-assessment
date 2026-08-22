@@ -66,7 +66,7 @@ test("renders a privacy-safe statement evidence panel with the dock image", asyn
   assert.match(visibleText, /Statement-supported planning case/i);
   assert.match(visibleText, /Cable is itemized separately/i);
   assert.match(visibleText, /Sewer is a special assessment/i);
-  assert.match(html, /src="\/dock-lake\.jpg"/i);
+  assert.match(html, /dock-lake\.jpg/i);
   assert.match(html, /alt="[^"]*dock[^"]*"/i);
   assert.doesNotMatch(visibleText, /Jeffrey|Emily|808 N Sumac|G-4/i);
 });
