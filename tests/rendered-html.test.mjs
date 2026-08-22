@@ -40,6 +40,13 @@ test("renders the reserve-readiness hero and primary navigation", async () => {
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
 
+test("loads the privacy-conscious analytics client", async () => {
+  const response = await render();
+  const html = await response.text();
+
+  assert.match(html, /<script[^>]+src="\/analytics\.js"[^>]*><\/script>/i);
+});
+
 test("renders one adopted-budget compliance answer without scenario choices", async () => {
   const response = await render();
   const html = await response.text();
