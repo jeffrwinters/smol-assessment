@@ -10,22 +10,23 @@ import {
 
 const navItems = [
   ["Overview", "overview"],
-  ["Scenarios", "scenarios"],
+  ["Calculation", "scenarios"],
+  ["Evidence", "evidence"],
   ["Plan", "plan"],
-  ["Motion", "motion"],
+  ["Action", "action"],
 ];
 
 const scenarioNotes = {
   "both-excluded": {
-    badge: "Statement-supported planning",
+    badge: "Recommended treatment",
     note: "Excludes separately itemized cable and the sewer special assessment.",
   },
   "sewer-included": {
-    badge: "Conservative",
+    badge: "Sensitivity check",
     note: "Excludes cable, but counts sewer in assessment income.",
   },
   "none-excluded": {
-    badge: "Maximum exposure",
+    badge: "Upper-bound check",
     note: "Counts both cable and sewer in assessment income.",
   },
 };
@@ -49,7 +50,7 @@ export default function Home() {
         <a className="brand" href="#overview" aria-label="Reserve readiness overview">
           <span className="brand-mark" aria-hidden="true">15</span>
           <span>
-            <strong>Reserve Readiness</strong>
+            <strong>Reserve Health Guide</strong>
             <small>St. Moritz on the Lake</small>
           </span>
         </a>
@@ -78,15 +79,15 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-content shell">
           <div className="hero-copy">
-            <p className="eyebrow">2027 board briefing</p>
+            <p className="eyebrow">Association reserve health guide</p>
             <h1>Closing the <em>15%</em> reserve gap</h1>
             <p className="hero-intro">
-              A focused plan to protect financing eligibility, strengthen our reserves,
-              and make the smallest responsible budget change.
+              A clear view of what we fund today, what the new rule requires, and the
+              practical path to stronger reserves.
             </p>
-            <div className="hero-tags" aria-label="Key briefing facts">
+            <div className="hero-tags" aria-label="Key reserve facts">
               <span>Effective January 4, 2027</span>
-              <span>Planning estimate</span>
+              <span>Based on the 2026 budget</span>
             </div>
           </div>
 
@@ -124,8 +125,8 @@ export default function Home() {
             <strong>{money(50000)}</strong>
           </div>
           <p>
-            The likely compliance gap is modest. The real decision is how
-            conservatively to define qualifying assessment income.
+            The association is close to the new minimum. A modest increase creates
+            compliance headroom and improves long-term reserve health.
           </p>
         </div>
       </section>
@@ -133,13 +134,13 @@ export default function Home() {
       <section className="section scenarios-section shell" id="scenarios">
         <div className="section-heading">
           <div>
-            <p className="eyebrow dark">Test the assumptions</p>
-            <h2>The statements strengthen the likely case.</h2>
+            <p className="eyebrow dark">How the calculation works</p>
+            <h2>Our supported denominator is {money(313720)}.</h2>
           </div>
           <p>
-            Fannie Mae and Freddie Mac measure the annual budgeted replacement-reserve
-            allocation against qualifying assessment income—not the cash already sitting
-            in reserve accounts.
+            Fannie Mae and Freddie Mac allow utility pass-throughs, special-assessment
+            income, and reserve income to be excluded. The other tabs remain available as
+            sensitivity checks—not competing recommendations.
           </p>
         </div>
 
@@ -195,17 +196,17 @@ export default function Home() {
         <div className="exclusion-note">
           <span className="note-mark" aria-hidden="true">i</span>
           <div>
-            <strong>The meeting’s key question</strong>
+            <strong>Recommended treatment</strong>
             <p>
-              Cable is billed as a separate owner pass-through, while sewer is a special
-              assessment that many owners have already paid. Confirm that neither belongs
-              in recurring 2027 assessment income before the budget is adopted.
+              Exclude cable ({money(47953)}) as an owner utility pass-through and sewer
+              ({money(62388)}) as special-assessment income. That produces the supported
+              {money(313720)} denominator used throughout this guide.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="evidence-section" aria-labelledby="evidence-title">
+      <section className="evidence-section" id="evidence" aria-labelledby="evidence-title">
         <div className="evidence-photo">
           <Image
             src="/dock-lake.jpg"
@@ -257,8 +258,9 @@ export default function Home() {
           </div>
 
           <p className="evidence-caveat">
-            Planning conclusion: the {money(313720)} denominator is now better supported,
-            but the lender or project reviewer makes the final eligibility determination.
+            Planning conclusion: {money(313720)} is the supported denominator. Keep the
+            cable and sewer classifications with the budget package; the lender or project
+            reviewer makes the final eligibility determination.
           </p>
         </div>
       </section>
@@ -284,22 +286,22 @@ export default function Home() {
 
           <div className="steps-heading">
             <div>
-              <p className="eyebrow dark">Three moves</p>
-              <h2>A clean path to compliance.</h2>
+              <p className="eyebrow dark">What members should know</p>
+              <h2>Three moves to stronger reserves.</h2>
             </div>
             <p>
-              Existing reserve balances are valuable, but the bright-line test focuses
-              on what the annual budget commits to replacement reserves.
+              Reserve cash on hand matters for long-term health, while the agency test
+              focuses on what each annual budget commits to replacement reserves.
             </p>
           </div>
 
           <ol className="steps-grid">
             <li>
               <span>01</span>
-              <h3>Validate the denominator</h3>
+              <h3>Document the exclusions</h3>
               <p>
-                Ask management, association counsel, or an experienced condo lender to
-                confirm the cable, sewer, insurance, and dock assessment treatment.
+                Label cable as an owner utility pass-through and sewer as special-assessment
+                income in the budget and supporting workpapers.
               </p>
             </li>
             <li>
@@ -339,17 +341,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="motion-section" id="motion">
+      <section className="motion-section" id="action">
         <div className="shell motion-grid">
           <div className="motion-label">
-            <p className="eyebrow">Meeting-ready motion</p>
-            <span>Read this aloud</span>
+            <p className="eyebrow">Recommended board action</p>
+            <span>Ongoing budget direction</span>
           </div>
           <blockquote>
-            “Direct management to prepare a 2027 budget with the greater of
+            Adopt a 2027 budget with the greater of
             <strong> $50,000 or 15% of qualifying assessment income</strong> allocated
-            explicitly to replacement reserves, and obtain written confirmation of the
-            Fannie Mae and Freddie Mac denominator calculation before final adoption.”
+            explicitly to replacement reserves. Document cable as an owner utility
+            pass-through and sewer as special-assessment income, excluding both from the
+            reserve denominator.
           </blockquote>
         </div>
       </section>
@@ -357,7 +360,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="shell footer-grid">
           <div>
-            <strong>Reserve Readiness</strong>
+            <strong>Reserve Health Guide</strong>
             <p>
               Planning estimates based on the 2026 adopted budget, June 30, 2026 financial
               report, and representative 2025–2026 owner statements reviewed privately.

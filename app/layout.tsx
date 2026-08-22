@@ -9,14 +9,14 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://smol-reserve-readiness.jeff-r-winters.chatgpt.site"),
-  title: "15% Reserve Readiness | St. Moritz on the Lake",
+  title: "Reserve Health Guide | St. Moritz on the Lake",
   description:
-    "A board-ready plan for meeting the 2027 Fannie Mae and Freddie Mac replacement-reserve requirement.",
+    "An association member guide to current reserve funding, the 2027 agency requirement, and the plan for closing the gap.",
   openGraph: {
     title: "Closing the 15% reserve gap",
-    description: "A practical 2027 plan for St. Moritz on the Lake.",
+    description: "A clear guide to reserve health and the practical 2027 funding plan.",
     url: "https://smol-reserve-readiness.jeff-r-winters.chatgpt.site",
-    siteName: "St. Moritz Reserve Readiness",
+    siteName: "St. Moritz Reserve Health Guide",
     type: "website",
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Closing the 15% reserve gap",
-    description: "A practical 2027 plan for St. Moritz on the Lake.",
+    description: "A clear guide to reserve health and the practical 2027 funding plan.",
     images: ["/og.png"],
   },
   icons: {
