@@ -1,21 +1,12 @@
 export const RESERVE_ALLOCATION = 43936;
-export const UNIT_COUNT = 61;
 
 export const SCENARIOS = [
   {
-    id: "both-excluded",
-    label: "Cable + sewer excluded",
-    denominator: 313720,
-  },
-  {
-    id: "sewer-included",
-    label: "Cable excluded; sewer included",
-    denominator: 376108,
-  },
-  {
-    id: "none-excluded",
-    label: "Neither excluded",
-    denominator: 424061,
+    id: "adopted-budget",
+    label: "2026 adopted budget",
+    regularAssessments: 194150,
+    insuranceAssessments: 79342,
+    denominator: 273492,
   },
 ];
 
@@ -29,14 +20,15 @@ export function calculateScenario(id) {
   }
 
   const target = scenario.denominator * 0.15;
-  const gap = target - RESERVE_ALLOCATION;
+  const cushion = RESERVE_ALLOCATION - target;
 
   return {
     ...scenario,
+    reserveAllocation: RESERVE_ALLOCATION,
     currentPct: round((RESERVE_ALLOCATION / scenario.denominator) * 100),
     target: round(target),
-    gap: round(gap),
-    monthlyPerUnit: round(gap / UNIT_COUNT / 12),
+    cushion: round(cushion),
+    additionalAnnual: round(Math.max(0, -cushion)),
+    additionalQuarterly: 0,
   };
 }
-

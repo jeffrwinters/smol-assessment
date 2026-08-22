@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://smol-reserve-readiness.jeff-r-winters.chatgpt.site"),
   title: "Reserve Health Guide | St. Moritz on the Lake",
   description:
-    "An association member guide to current reserve funding, the 2027 agency requirement, and the plan for closing the gap.",
+    "An association member guide to current reserve funding and the 2027 agency requirement.",
   openGraph: {
-    title: "Closing the 15% reserve gap",
-    description: "A clear guide to reserve health and the practical 2027 funding plan.",
+    title: "Meeting the 15% reserve standard",
+    description: "The adopted 2026 budget is already above the 15% line-item minimum.",
     url: "https://smol-reserve-readiness.jeff-r-winters.chatgpt.site",
     siteName: "St. Moritz Reserve Health Guide",
     type: "website",
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1733,
         height: 908,
-        alt: "Sunset over the lake with the title Closing the 15% reserve gap",
+        alt: "Sunset over the lake with the title Meeting the 15% reserve standard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Closing the 15% reserve gap",
-    description: "A clear guide to reserve health and the practical 2027 funding plan.",
+    title: "Meeting the 15% reserve standard",
+    description: "The adopted 2026 budget is already above the 15% line-item minimum.",
     images: ["/og.png"],
   },
   icons: {

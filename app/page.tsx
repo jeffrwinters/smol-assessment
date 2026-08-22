@@ -20,7 +20,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#overview" aria-label="Reserve funding overview">
-          <span className="brand-mark" aria-hidden="true">15</span>
+          <span className="brand-mark" aria-hidden="true">15%</span>
           <span>
             <strong>Reserve Health Guide</strong>
             <small>St. Moritz on the Lake</small>
@@ -54,8 +54,8 @@ export default function Home() {
             <p className="eyebrow">2027 reserve funding</p>
             <h1>The <em>15%</em> decision, made simple.</h1>
             <p className="hero-intro">
-              Meeting the new standard means increasing our annual reserve allocation
-              by {money(3122)}.
+              The 2026 adopted budget is already above 15%, allocating 16.06% to
+              reserves. No dues increase is needed solely to meet the standard.
             </p>
             <div className="hero-tags" aria-label="Key reserve facts">
               <span>Effective January 4, 2027</span>
@@ -64,20 +64,20 @@ export default function Home() {
           </div>
 
           <aside className="hero-card" aria-label="Quarterly owner impact">
-            <p>Estimated owner increase</p>
-            <strong>{money(12.8, 2)}</strong>
-            <span>more per quarter</span>
+            <p>Additional owner increase</p>
+            <strong>{money(0, 2)}</strong>
+            <span>per quarter</span>
 
             <div className="meter-row">
-              <div className="meter" aria-label="Current allocation is 14 percent toward a 15 percent requirement">
-                <span>14.00%</span>
+              <div className="meter" aria-label="Current allocation is 16.06 percent, above the 15 percent requirement">
+                <span>16.06%</span>
               </div>
               <div>
                 <small>Current allocation</small>
                 <b>Target: 15.00%</b>
               </div>
             </div>
-            <small className="hero-card-note">Equal-share estimate across 61 owners.</small>
+            <small className="hero-card-note">Based on the adopted 2026 budget and permitted exclusions.</small>
           </aside>
         </div>
 
@@ -95,11 +95,11 @@ export default function Home() {
           <span className="decision-arrow" aria-hidden="true">→</span>
           <div>
             <small>15% annual requirement</small>
-            <strong>{money(47058)}</strong>
+            <strong>{money(41023.8, 2)}</strong>
           </div>
           <div className="decision-gap">
-            <small>Annual gap</small>
-            <strong>{money(3122)}</strong>
+            <small>Amount above 15%</small>
+            <strong>{money(2912.2, 2)}</strong>
           </div>
         </div>
       </section>
@@ -108,47 +108,51 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow dark">What it costs</p>
-            <h2>{money(12.8, 2)} more per owner per quarter.</h2>
+            <h2>{money(0, 2)} additional per owner per quarter.</h2>
           </div>
           <p>
-            That is the estimated equal-share increase needed to close the current
-            reserve-allocation gap and reach 15%.
+            The current reserve allocation already exceeds the 15% line-item minimum,
+            so no new owner charge is needed for this requirement.
           </p>
         </div>
 
         <div className="scenario-output fixed-answer">
           <div className="scenario-summary">
             <p className="result-kicker">The owner impact</p>
-            <strong className="result-gap">{money(12.8, 2)}</strong>
-            <p className="result-label">more per owner each quarter</p>
+            <strong className="result-gap">{money(0, 2)}</strong>
+            <p className="result-label">additional per owner per quarter</p>
             <div className="result-pill">
-              <span>{money(51.18, 2)} per year</span>
-              <span>61-owner equal-share estimate</span>
+              <span>Current funding already clears 15%</span>
+              <span>No equal-share assumption needed</span>
             </div>
           </div>
 
           <div className="math-card" aria-label="15 percent reserve calculation">
             <div>
-              <span>Eligible assessment income</span>
-              <b>{money(313720)}</b>
+              <span>Regular HOA + COA assessments</span>
+              <b>{money(194150)}</b>
             </div>
-            <div className="math-symbol">× 15%</div>
             <div>
-              <span>Required annual allocation</span>
-              <b>{money(47058)}</b>
+              <span>+ Insurance assessments</span>
+              <b>{money(79342)}</b>
             </div>
-            <div className="math-symbol">− {money(43936)}</div>
+            <div>
+              <span>Eligible assessment income</span>
+              <b>{money(273492)}</b>
+            </div>
+            <div className="math-symbol">× 15% = {money(41023.8, 2)}</div>
+            <div className="math-symbol">Current reserves: {money(43936)}</div>
             <div className="math-total">
-              <span>Annual gap to close</span>
-              <b>{money(3122)}</b>
+              <span>Amount above the minimum</span>
+              <b>{money(2912.2, 2)}</b>
             </div>
           </div>
         </div>
 
         <p className="calculation-note">
-          Cable pass-through charges and sewer special-assessment income are excluded
-          from the settled {money(313720)} calculation. Actual owner billing may vary if
-          the association does not divide the increase equally.
+          Cable ({money(47953)}), sewer ({money(62488)}), special-assessment income,
+          reserve-account income, and incidental income are excluded as permitted.
+          Insurance assessments remain included as operating-assessment income.
         </p>
       </section>
 
@@ -160,15 +164,15 @@ export default function Home() {
             fill
             sizes="(max-width: 760px) 100vw, 52vw"
           />
-          <p>A small quarterly increase closes the current budget gap.</p>
+          <p>The current budget clears the 15% line-item threshold.</p>
         </div>
 
         <div className="evidence-copy">
           <p className="eyebrow dark">If we stay below 15%</p>
           <h2 id="risk-title">The risk is financing friction.</h2>
           <p className="evidence-intro">
-            For applicable Full Review loan applications dated January 4, 2027 or
-            later, an underfunded budget can make a unit harder to finance.
+            If a future budget falls below 15%, applicable Full Review loan applications
+            dated January 4, 2027 or later can face additional financing hurdles.
           </p>
 
           <div className="evidence-list risk-list">
@@ -208,17 +212,17 @@ export default function Home() {
           <div className="recommendation simple-recommendation">
             <div className="recommendation-copy">
               <p className="eyebrow">The straightforward choice</p>
-              <h2>Fund the full <em>{money(47058)}</em>.</h2>
+              <h2>Maintain the full <em>{money(43936)}</em>.</h2>
               <p>
-                Increasing the annual reserve allocation by {money(3122)} reaches the
-                15% standard using the current eligible assessment income.
+                The existing annual allocation equals 16.06% of eligible assessment
+                income and provides a {money(2912.2, 2)} cushion above the minimum.
               </p>
             </div>
             <div className="recommendation-number">
-              <span>Estimated quarterly increase</span>
-              <strong>{money(12.8, 2)}</strong>
+              <span>Additional quarterly increase</span>
+              <strong>{money(0, 2)}</strong>
               <b>per owner</b>
-              <small>Equal-share estimate across 61 owners.</small>
+              <small>Required solely for the 15% standard.</small>
             </div>
           </div>
         </div>
@@ -231,10 +235,10 @@ export default function Home() {
             <span>2027 budget direction</span>
           </div>
           <blockquote>
-            Adopt a 2027 budget that allocates at least
-            <strong> {money(47058)} to replacement reserves.</strong> This closes the
-            {` ${money(3122)} `}annual gap—approximately {money(12.8, 2)} more per
-            owner per quarter if divided equally.
+            Maintain at least 15% of eligible assessment income for replacement
+            reserves, show the calculation in the annual budget, and recalculate it
+            each year. The current {money(43936)} allocation satisfies the standard
+            using the adopted 2026 budget.
           </blockquote>
         </div>
       </section>
@@ -245,8 +249,9 @@ export default function Home() {
             <strong>Reserve Health Guide</strong>
             <p>
               Planning estimates based on the 2026 adopted budget and June 30, 2026
-              financial report. Final eligibility determinations belong to the reviewing
-              lender.
+              financial report. This measures the agency budget line-item requirement,
+              not long-term reserve adequacy. Final eligibility determinations belong
+              to the reviewing lender.
             </p>
           </div>
           <div className="source-links">

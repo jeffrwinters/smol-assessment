@@ -30,9 +30,9 @@ test("renders the reserve-readiness hero and primary navigation", async () => {
   const html = await response.text();
   const visibleText = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
   assert.match(html, /<title>Reserve Health Guide \| St\. Moritz on the Lake<\/title>/i);
-  assert.match(visibleText, /Closing the 15% reserve gap/i);
+  assert.match(visibleText, /already above 15%/i);
   assert.match(visibleText, /January 4, 2027/i);
-  assert.match(visibleText, /\$\s*3,122/);
+  assert.match(visibleText, /16\.06%/);
   assert.match(html, /href="#overview"/);
   assert.match(html, /href="#numbers"/);
   assert.match(html, /href="#risk"/);
@@ -40,20 +40,23 @@ test("renders the reserve-readiness hero and primary navigation", async () => {
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
 
-test("renders one fixed 15% funding answer without scenario choices", async () => {
+test("renders one adopted-budget compliance answer without scenario choices", async () => {
   const response = await render();
   const html = await response.text();
   const visibleText = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
   assert.match(visibleText, /Current annual allocation/i);
   assert.match(visibleText, /\$\s*43,936/);
-  assert.match(visibleText, /\$\s*47,058/);
-  assert.match(visibleText, /\$\s*3,122/);
-  assert.match(visibleText, /\$\s*12\.80 more per owner per quarter/i);
+  assert.match(visibleText, /\$\s*41,023\.80/);
+  assert.match(visibleText, /\$\s*2,912\.20/);
+  assert.match(visibleText, /\$\s*0\.00 additional per owner per quarter/i);
+  assert.match(visibleText, /\$\s*194,150/);
+  assert.match(visibleText, /\$\s*79,342/);
+  assert.match(visibleText, /\$\s*273,492/);
   assert.doesNotMatch(visibleText, /\$\s*50,000/);
   assert.doesNotMatch(html, /aria-label="Choose a reserve calculation scenario"/i);
   assert.doesNotMatch(visibleText, /Sensitivity check|Upper-bound check/i);
-  assert.match(visibleText, /Adopt a 2027 budget/i);
+  assert.match(visibleText, /Maintain at least 15%/i);
   assert.match(html, /singlefamily\.fanniemae\.com/i);
   assert.match(html, /guide\.freddiemac\.com/i);
 });
