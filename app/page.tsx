@@ -164,7 +164,6 @@ export default function Home() {
             fill
             sizes="(max-width: 760px) 100vw, 52vw"
           />
-          <p>The current budget clears the 15% line-item threshold.</p>
         </div>
 
         <div className="evidence-copy">

@@ -68,6 +68,7 @@ test("renders the dock image without detailed owner-billing evidence", async () 
 
   assert.match(html, /dock-lake\.jpg/i);
   assert.match(html, /alt="[^"]*dock[^"]*"/i);
+  assert.doesNotMatch(visibleText, /The current budget clears the 15% line-item threshold/i);
   assert.doesNotMatch(visibleText, /shoreline to structure/i);
   assert.doesNotMatch(visibleText, /Cable is itemized separately|Sewer is a special assessment/i);
   assert.doesNotMatch(visibleText, /Jeffrey|Emily|808 N Sumac|G-4/i);
