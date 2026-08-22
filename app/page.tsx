@@ -16,8 +16,8 @@ const navItems = [
 
 const scenarioNotes = {
   "both-excluded": {
-    badge: "Most likely",
-    note: "Treats cable and sewer as owner utility pass-throughs.",
+    badge: "Statement-supported planning",
+    note: "Excludes separately itemized cable and the sewer special assessment.",
   },
   "sewer-included": {
     badge: "Conservative",
@@ -133,7 +133,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow dark">Test the assumptions</p>
-            <h2>Where we’re short depends on two exclusions.</h2>
+            <h2>The statements strengthen the likely case.</h2>
           </div>
           <p>
             Fannie Mae and Freddie Mac measure the annual budgeted replacement-reserve
@@ -196,11 +196,67 @@ export default function Home() {
           <div>
             <strong>The meeting’s key question</strong>
             <p>
-              Will the lender or project reviewer accept both cable ({money(47953)}) and
-              sewer ({money(62388)}) as utility pass-through exclusions? Get that treatment
-              confirmed in writing before the 2027 budget is adopted.
+              Cable is billed as a separate owner pass-through, while sewer is a special
+              assessment that many owners have already paid. Confirm that neither belongs
+              in recurring 2027 assessment income before the budget is adopted.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="evidence-section" aria-labelledby="evidence-title">
+        <div className="evidence-photo">
+          <img
+            src="/dock-lake.jpg"
+            alt="Community dock slips and shoreline at St. Moritz on the Lake"
+          />
+          <p>Reserves protect the property owners share—from shoreline to structure.</p>
+        </div>
+
+        <div className="evidence-copy">
+          <p className="eyebrow dark">Evidence from owner billing</p>
+          <h2 id="evidence-title">What owner statements confirm.</h2>
+          <p className="evidence-intro">
+            Representative 2025–2026 statements separate the recurring condo charge from
+            reserves and other owner-funded items. No owner-identifying information is
+            included here.
+          </p>
+
+          <div className="evidence-list">
+            <article>
+              <span aria-hidden="true">01</span>
+              <div>
+                <strong>Cable is itemized separately</strong>
+                <p>It appears as its own quarterly owner charge, supporting pass-through treatment.</p>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">02</span>
+              <div>
+                <strong>Sewer is a special assessment</strong>
+                <p>Many owners have prepaid it, so it should not be treated as durable 2027 operating income.</p>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">03</span>
+              <div>
+                <strong>Reserves already have a clear line</strong>
+                <p>Statements identify the condo reserve charge separately from the regular unit assessment.</p>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">04</span>
+              <div>
+                <strong>Other assessments remain distinct</strong>
+                <p>Insurance is separately assessed, and dock charges are issued through a separate Dock Fund.</p>
+              </div>
+            </article>
+          </div>
+
+          <p className="evidence-caveat">
+            Planning conclusion: the {money(313720)} denominator is now better supported,
+            but the lender or project reviewer makes the final eligibility determination.
+          </p>
         </div>
       </section>
 
@@ -300,8 +356,9 @@ export default function Home() {
           <div>
             <strong>Reserve Readiness</strong>
             <p>
-              Planning estimates based on the 2026 adopted budget and June 30, 2026
-              financial report. Final eligibility determinations belong to the reviewing lender.
+              Planning estimates based on the 2026 adopted budget, June 30, 2026 financial
+              report, and representative 2025–2026 owner statements reviewed privately.
+              Final eligibility determinations belong to the reviewing lender.
             </p>
           </div>
           <div className="source-links">
@@ -333,4 +390,3 @@ export default function Home() {
     </main>
   );
 }
-

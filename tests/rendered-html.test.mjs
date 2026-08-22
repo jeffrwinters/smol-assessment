@@ -56,3 +56,17 @@ test("renders the full decision briefing with scenario choices and board motion"
   assert.match(html, /singlefamily\.fanniemae\.com/i);
   assert.match(html, /guide\.freddiemac\.com/i);
 });
+
+test("renders a privacy-safe statement evidence panel with the dock image", async () => {
+  const response = await render();
+  const html = await response.text();
+  const visibleText = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+  assert.match(visibleText, /What owner statements confirm/i);
+  assert.match(visibleText, /Statement-supported planning case/i);
+  assert.match(visibleText, /Cable is itemized separately/i);
+  assert.match(visibleText, /Sewer is a special assessment/i);
+  assert.match(html, /src="\/dock-lake\.jpg"/i);
+  assert.match(html, /alt="[^"]*dock[^"]*"/i);
+  assert.doesNotMatch(visibleText, /Jeffrey|Emily|808 N Sumac|G-4/i);
+});
