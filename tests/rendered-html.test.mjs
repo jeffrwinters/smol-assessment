@@ -39,3 +39,20 @@ test("renders the reserve-readiness hero and primary navigation", async () => {
   assert.match(html, /href="#motion"/);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
+
+test("renders the full decision briefing with scenario choices and board motion", async () => {
+  const response = await render();
+  const html = await response.text();
+  const visibleText = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+  assert.match(visibleText, /Cable \+ sewer excluded/i);
+  assert.match(visibleText, /Cable excluded; sewer included/i);
+  assert.match(visibleText, /Neither excluded/i);
+  assert.match(visibleText, /Current annual allocation/i);
+  assert.match(visibleText, /\$\s*43,936/);
+  assert.match(visibleText, /\$\s*47,058/);
+  assert.match(visibleText, /\$\s*50,000/);
+  assert.match(visibleText, /Direct management to prepare a 2027 budget/i);
+  assert.match(html, /singlefamily\.fanniemae\.com/i);
+  assert.match(html, /guide\.freddiemac\.com/i);
+});
