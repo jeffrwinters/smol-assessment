@@ -52,6 +52,11 @@ test("renders a dedicated opening backdrop behind the scrolling financial story"
   assert.ok(heroIndex > backdropIndex, "hero content should render over the backdrop");
   assert.ok(secondImageIndex > heroIndex, "second image should follow the opening story");
   assert.match(html, /class="opening-backdrop"[^>]*aria-hidden="true"/i);
+  assert.match(
+    html,
+    /class="opening-backdrop"[^>]*style="[^"]*background-image:url\(&quot;hero-lake\.jpg&quot;\)/i,
+    "hero background should use a page-relative URL that works at either deployment path",
+  );
 });
 
 test("loads the privacy-conscious analytics client", async () => {

@@ -199,7 +199,6 @@ summary:focus-visible {
   height: calc(100svh - var(--header-height));
   overflow: hidden;
   background-color: var(--evergreen-950);
-  background-image: url("/hero-lake.jpg");
   background-position: 50% 49%;
   background-size: cover;
   box-shadow: inset 0 -1px rgb(255 255 255 / 10%);

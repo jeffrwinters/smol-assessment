@@ -47,7 +47,11 @@ export default function Home() {
       </header>
 
       <div className="opening-story">
-        <div className="opening-backdrop" aria-hidden="true" />
+        <div
+          className="opening-backdrop"
+          aria-hidden="true"
+          style={{ backgroundImage: 'url("hero-lake.jpg")' }}
+        />
         <div className="opening-content">
           <section className="hero" id="overview">
             <div className="hero-content shell">
