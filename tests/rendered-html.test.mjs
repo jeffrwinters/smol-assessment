@@ -36,7 +36,7 @@ test("renders the reserve-readiness hero and primary navigation", async () => {
   assert.match(html, /href="#overview"/);
   assert.match(html, /href="#numbers"/);
   assert.match(html, /href="#risk"/);
-  assert.match(html, /href="#action"/);
+  assert.doesNotMatch(html, /href="#action"/);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
 
@@ -75,8 +75,9 @@ test("renders the official formula and the association's pass-through evidence",
   assert.match(visibleText, /Make the record airtight/i);
   assert.match(
     visibleText,
-    /obtain a short written statement from management or its accountant confirming that cable and recurring sewer collections merely offset the corresponding provider charges/i,
+    /obtain a short written statement from management confirming that cable and recurring sewer collections merely offset the corresponding provider charges/i,
   );
+  assert.doesNotMatch(visibleText, /or its accountant/i);
   assert.doesNotMatch(visibleText, /What it costs/i);
   assert.doesNotMatch(visibleText, /The owner impact/i);
   assert.doesNotMatch(visibleText, /\$\s*0\.00 additional per owner per quarter/i);
@@ -105,7 +106,8 @@ test("renders an evergreen member reference without meeting-specific framing", a
 
   assert.match(html, /<title>Reserve Health Guide \| St\. Moritz on the Lake<\/title>/i);
   assert.match(visibleText, /2027 reserve funding/i);
-  assert.match(visibleText, /Recommended board action/i);
+  assert.doesNotMatch(visibleText, /Recommended board action|2027 budget direction/i);
+  assert.doesNotMatch(html, /class="motion-section"/i);
   assert.match(visibleText, /fewer conventional financing options/i);
   assert.match(visibleText, /sale or refinancing delays/i);
   assert.match(visibleText, /smaller buyer pool/i);

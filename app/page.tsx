@@ -4,7 +4,6 @@ const navItems = [
   ["Overview", "overview"],
   ["The research", "numbers"],
   ["The risk", "risk"],
-  ["Board action", "action"],
 ];
 
 const money = (value: number, digits = 0) =>
@@ -158,8 +157,8 @@ export default function Home() {
                 <h3>Confirm the classification in writing.</h3>
                 <p>
                   The association should obtain a short written statement from
-                  management or its accountant confirming that cable and recurring
-                  sewer collections merely offset the corresponding provider charges.
+                  management confirming that cable and recurring sewer collections
+                  merely offset the corresponding provider charges.
                 </p>
                 <small>
                   The agency rules permit these exclusions; the reviewing lender makes
@@ -233,21 +232,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="motion-section" id="action">
-        <div className="shell motion-grid">
-          <div className="motion-label">
-            <p className="eyebrow">Recommended board action</p>
-            <span>2027 budget direction</span>
-          </div>
-          <blockquote>
-            Maintain at least 15% of eligible assessment income for replacement
-            reserves, show the calculation in the annual budget, and recalculate it
-            each year. The current {money(43936)} allocation satisfies the standard
-            using the adopted 2026 budget.
-          </blockquote>
         </div>
       </section>
 
