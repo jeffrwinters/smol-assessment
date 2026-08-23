@@ -47,9 +47,11 @@ export default function Home() {
         </details>
       </header>
 
-      <section className="hero" id="overview">
-        <div className="hero-shade" />
-        <div className="hero-content shell">
+      <div className="opening-story">
+        <div className="opening-backdrop" aria-hidden="true" />
+        <div className="opening-content">
+          <section className="hero" id="overview">
+            <div className="hero-content shell">
           <div className="hero-copy">
             <p className="eyebrow">2027 reserve funding</p>
             <h1>The <em>15%</em> decision, made simple.</h1>
@@ -79,32 +81,32 @@ export default function Home() {
             </div>
             <small className="hero-card-note">Based on the adopted 2026 budget and permitted exclusions.</small>
           </aside>
-        </div>
+            </div>
 
-        <a className="scroll-cue" href="#numbers">
-          See the numbers <span aria-hidden="true">↓</span>
-        </a>
-      </section>
+            <a className="scroll-cue" href="#numbers">
+              See the numbers <span aria-hidden="true">↓</span>
+            </a>
+          </section>
 
-      <section className="decision-band" aria-label="Reserve funding summary">
-        <div className="shell decision-grid simple">
-          <div>
-            <small>Current annual allocation</small>
-            <strong>{money(43936)}</strong>
-          </div>
-          <span className="decision-arrow" aria-hidden="true">→</span>
-          <div>
-            <small>15% annual requirement</small>
-            <strong>{money(41023.8, 2)}</strong>
-          </div>
-          <div className="decision-gap">
-            <small>Amount above 15%</small>
-            <strong>{money(2912.2, 2)}</strong>
-          </div>
-        </div>
-      </section>
+          <section className="decision-band" aria-label="Reserve funding summary">
+            <div className="shell decision-grid simple">
+              <div>
+                <small>Current annual allocation</small>
+                <strong>{money(43936)}</strong>
+              </div>
+              <span className="decision-arrow" aria-hidden="true">→</span>
+              <div>
+                <small>15% annual requirement</small>
+                <strong>{money(41023.8, 2)}</strong>
+              </div>
+              <div className="decision-gap">
+                <small>Amount above 15%</small>
+                <strong>{money(2912.2, 2)}</strong>
+              </div>
+            </div>
+          </section>
 
-      <section className="section scenarios-section shell" id="numbers">
+          <section className="section scenarios-section shell" id="numbers">
         <div className="section-heading">
           <div>
             <p className="eyebrow dark">What it costs</p>
@@ -154,7 +156,9 @@ export default function Home() {
           reserve-account income, and incidental income are excluded as permitted.
           Insurance assessments remain included as operating-assessment income.
         </p>
-      </section>
+          </section>
+        </div>
+      </div>
 
       <section className="evidence-section" id="risk" aria-labelledby="risk-title">
         <div className="evidence-photo">

@@ -40,6 +40,20 @@ test("renders the reserve-readiness hero and primary navigation", async () => {
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
 
+test("renders a dedicated opening backdrop behind the scrolling financial story", async () => {
+  const response = await render();
+  const html = await response.text();
+
+  const backdropIndex = html.indexOf('class="opening-backdrop"');
+  const heroIndex = html.indexOf('class="hero"');
+  const secondImageIndex = html.indexOf('class="evidence-section"');
+
+  assert.ok(backdropIndex >= 0, "opening backdrop should render");
+  assert.ok(heroIndex > backdropIndex, "hero content should render over the backdrop");
+  assert.ok(secondImageIndex > heroIndex, "second image should follow the opening story");
+  assert.match(html, /class="opening-backdrop"[^>]*aria-hidden="true"/i);
+});
+
 test("loads the privacy-conscious analytics client", async () => {
   const response = await render();
   const html = await response.text();

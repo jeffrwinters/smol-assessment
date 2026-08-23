@@ -178,28 +178,57 @@ summary:focus-visible {
   color: white;
 }
 
+.opening-story {
+  position: relative;
+  display: grid;
+  isolation: isolate;
+  background: var(--evergreen-950);
+}
+
+.opening-backdrop,
+.opening-content {
+  grid-area: 1 / 1;
+}
+
+.opening-backdrop {
+  position: sticky;
+  z-index: 0;
+  top: var(--header-height);
+  align-self: start;
+  width: 100%;
+  height: calc(100svh - var(--header-height));
+  overflow: hidden;
+  background-color: var(--evergreen-950);
+  background-image: url("/hero-lake.jpg");
+  background-position: 50% 49%;
+  background-size: cover;
+  box-shadow: inset 0 -1px rgb(255 255 255 / 10%);
+}
+
+.opening-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 66% 48%, rgb(229 184 92 / 18%), transparent 25%),
+    linear-gradient(90deg, rgb(5 24 20 / 92%) 0%, rgb(5 24 20 / 72%) 45%, rgb(5 24 20 / 28%) 76%, rgb(5 24 20 / 48%) 100%),
+    linear-gradient(0deg, rgb(5 24 20 / 72%) 0%, transparent 44%);
+}
+
+.opening-content {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
 .hero {
   position: relative;
   min-height: calc(100svh - var(--header-height));
   display: grid;
   align-items: center;
   overflow: hidden;
-  background-color: var(--evergreen-950);
-  background-image: url("/hero-lake.jpg");
-  background-position: 50% 49%;
-  background-size: cover;
+  background: transparent;
   color: white;
-  isolation: isolate;
-}
-
-.hero-shade {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background:
-    radial-gradient(circle at 66% 48%, rgb(229 184 92 / 18%), transparent 25%),
-    linear-gradient(90deg, rgb(5 24 20 / 92%) 0%, rgb(5 24 20 / 72%) 45%, rgb(5 24 20 / 28%) 76%, rgb(5 24 20 / 48%) 100%),
-    linear-gradient(0deg, rgb(5 24 20 / 68%) 0%, transparent 44%);
 }
 
 .hero-content {
@@ -404,9 +433,13 @@ summary:focus-visible {
 }
 
 .decision-band {
+  position: relative;
+  z-index: 2;
   color: white;
-  background: var(--evergreen-900);
+  background: color-mix(in srgb, var(--evergreen-900) 94%, transparent);
   border-top: 1px solid rgb(255 255 255 / 9%);
+  box-shadow: 0 -24px 70px rgb(3 17 14 / 18%);
+  backdrop-filter: blur(14px);
 }
 
 .decision-grid {
@@ -468,6 +501,17 @@ summary:focus-visible {
 .section {
   padding-block: clamp(78px, 10vw, 132px);
   scroll-margin-top: var(--header-height);
+}
+
+.scenarios-section {
+  position: relative;
+  z-index: 2;
+  background: rgb(245 240 230 / 96%);
+  box-shadow:
+    0 0 0 100vmax rgb(245 240 230 / 96%),
+    0 -28px 80px rgb(3 17 14 / 20%);
+  clip-path: inset(0 -100vmax);
+  backdrop-filter: blur(12px);
 }
 
 .section-heading,
@@ -721,10 +765,14 @@ summary:focus-visible {
 }
 
 .evidence-section {
+  position: relative;
+  z-index: 3;
   min-height: 760px;
   display: grid;
   grid-template-columns: minmax(0, 1.03fr) minmax(440px, 0.97fr);
   background: var(--mist);
+  border-top: 1px solid rgb(229 184 92 / 68%);
+  box-shadow: 0 -34px 100px rgb(3 17 14 / 34%);
 }
 
 .evidence-photo {
@@ -1076,10 +1124,13 @@ summary:focus-visible {
 
   .hero {
     min-height: calc(100svh - var(--header-height));
+  }
+
+  .opening-backdrop {
     background-position: 61% center;
   }
 
-  .hero-shade {
+  .opening-backdrop::after {
     background:
       linear-gradient(0deg, rgb(5 24 20 / 95%) 0%, rgb(5 24 20 / 70%) 57%, rgb(5 24 20 / 38%) 100%),
       linear-gradient(90deg, rgb(5 24 20 / 45%), transparent);
@@ -1217,6 +1268,11 @@ summary:focus-visible {
   *::after {
     transition-duration: 0.01ms !important;
   }
+
+  .opening-backdrop {
+    position: absolute;
+    top: 0;
+  }
 }
 
 @media print {
@@ -1241,6 +1297,10 @@ summary:focus-visible {
   .hero {
     min-height: auto;
     background-image: none;
+  }
+
+  .opening-backdrop {
+    display: none;
   }
 
   .hero-content {
