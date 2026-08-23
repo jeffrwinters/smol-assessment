@@ -99,6 +99,27 @@ test("renders the dock image without detailed owner-billing evidence", async () 
   assert.doesNotMatch(visibleText, /Jeffrey|Emily|808 N Sumac|G-4/i);
 });
 
+test("renders the adopted-budget math immediately before the second image", async () => {
+  const response = await render();
+  const html = await response.text();
+  const visibleText = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+  const calculationIndex = html.indexOf('class="calculation-strip"');
+  const secondImageIndex = html.indexOf('class="evidence-section"');
+
+  assert.ok(calculationIndex >= 0, "calculation strip should render");
+  assert.ok(secondImageIndex > calculationIndex, "calculation strip should precede the second image");
+  assert.match(visibleText, /Regular HOA \+ COA assessments \$194,150/i);
+  assert.match(visibleText, /Insurance assessments \$79,342/i);
+  assert.match(visibleText, /Eligible assessment income \$273,492/i);
+  assert.match(visibleText, /15% requirement \$41,023\.80/i);
+  assert.match(visibleText, /Current allocation \$43,936/i);
+  assert.match(visibleText, /Amount above minimum \$2,912\.20/i);
+  assert.match(visibleText, /Current funding rate 16\.06%/i);
+  assert.match(visibleText, /Cable and sewer are excluded as permitted pass-throughs/i);
+  assert.doesNotMatch(visibleText, /Cable assessments \$47,953|Sewer assessments \$62,488/i);
+});
+
 test("renders an evergreen member reference without meeting-specific framing", async () => {
   const response = await render();
   const html = await response.text();

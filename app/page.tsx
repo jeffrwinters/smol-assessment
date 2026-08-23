@@ -170,6 +170,58 @@ export default function Home() {
         </div>
       </div>
 
+      <section className="calculation-strip" aria-labelledby="calculation-title">
+        <div className="shell calculation-shell">
+          <div className="calculation-heading">
+            <div>
+              <p className="eyebrow">2026 adopted budget math</p>
+              <h2 id="calculation-title">How the <em>16.06%</em> is calculated.</h2>
+            </div>
+            <p>
+              This uses assessment income that remains after the permitted
+              pass-through exclusions.
+            </p>
+          </div>
+
+          <div className="calculation-flow" aria-label="Reserve funding calculation">
+            <article>
+              <small>Regular HOA + COA assessments</small>
+              <strong>{money(194150)}</strong>
+            </article>
+            <span aria-hidden="true">+</span>
+            <article>
+              <small>Insurance assessments</small>
+              <strong>{money(79342)}</strong>
+            </article>
+            <span aria-hidden="true">=</span>
+            <article>
+              <small>Eligible assessment income</small>
+              <strong>{money(273492)}</strong>
+            </article>
+            <span aria-hidden="true">×</span>
+            <article>
+              <small>15% requirement</small>
+              <strong>{money(41023.8, 2)}</strong>
+            </article>
+            <span aria-hidden="true">vs.</span>
+            <article>
+              <small>Current allocation</small>
+              <strong>{money(43936)}</strong>
+            </article>
+            <span aria-hidden="true">=</span>
+            <article className="calculation-result">
+              <small>Amount above minimum</small>
+              <strong>{money(2912.2, 2)}</strong>
+            </article>
+          </div>
+
+          <div className="calculation-footnote">
+            <strong>Current funding rate <span>16.06%</span></strong>
+            <p>Cable and sewer are excluded as permitted pass-throughs.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="evidence-section" id="risk" aria-labelledby="risk-title">
         <div className="evidence-photo">
           <Image
