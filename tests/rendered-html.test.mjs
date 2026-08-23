@@ -61,25 +61,27 @@ test("loads the privacy-conscious analytics client", async () => {
   assert.match(html, /<script[^>]+src="\/analytics\.js"[^>]*><\/script>/i);
 });
 
-test("renders one adopted-budget compliance answer without scenario choices", async () => {
+test("renders the official formula and the association's pass-through evidence", async () => {
   const response = await render();
   const html = await response.text();
   const visibleText = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-  assert.match(visibleText, /Current annual allocation/i);
-  assert.match(visibleText, /\$\s*43,936/);
-  assert.match(visibleText, /\$\s*41,023\.80/);
-  assert.match(visibleText, /\$\s*2,912\.20/);
-  assert.match(visibleText, /\$\s*0\.00 additional per owner per quarter/i);
-  assert.match(visibleText, /\$\s*194,150/);
-  assert.match(visibleText, /\$\s*79,342/);
-  assert.match(visibleText, /\$\s*273,492/);
-  assert.doesNotMatch(visibleText, /\$\s*50,000/);
-  assert.doesNotMatch(html, /aria-label="Choose a reserve calculation scenario"/i);
-  assert.doesNotMatch(visibleText, /Sensitivity check|Upper-bound check/i);
-  assert.match(visibleText, /Maintain at least 15%/i);
-  assert.doesNotMatch(visibleText, /Additional quarterly increase/i);
-  assert.match(html, /singlefamily\.fanniemae\.com/i);
+  assert.match(visibleText, /What the official guidance says/i);
+  assert.match(visibleText, /annual replacement-reserve allocation/i);
+  assert.match(visibleText, /annual budgeted assessment income/i);
+  assert.match(visibleText, /utility pass-through income/i);
+  assert.match(visibleText, /Cable.*\$\s*23,976\.50.*\$\s*23,976\.00/i);
+  assert.match(visibleText, /Sewer.*\$\s*31,244\.00.*\$\s*31,244\.48/i);
+  assert.match(visibleText, /Make the record airtight/i);
+  assert.match(
+    visibleText,
+    /obtain a short written statement from management or its accountant confirming that cable and recurring sewer collections merely offset the corresponding provider charges/i,
+  );
+  assert.doesNotMatch(visibleText, /What it costs/i);
+  assert.doesNotMatch(visibleText, /The owner impact/i);
+  assert.doesNotMatch(visibleText, /\$\s*0\.00 additional per owner per quarter/i);
+  assert.doesNotMatch(html, /class="decision-band"/i);
+  assert.match(html, /fanniemae\.com/i);
   assert.match(html, /guide\.freddiemac\.com/i);
 });
 

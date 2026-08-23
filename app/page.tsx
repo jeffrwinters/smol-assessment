@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const navItems = [
   ["Overview", "overview"],
-  ["The numbers", "numbers"],
+  ["The research", "numbers"],
   ["The risk", "risk"],
   ["Board action", "action"],
 ];
@@ -88,74 +88,85 @@ export default function Home() {
             </a>
           </section>
 
-          <section className="decision-band" aria-label="Reserve funding summary">
-            <div className="shell decision-grid simple">
+          <section className="section research-section shell" id="numbers">
+            <div className="research-heading">
               <div>
-                <small>Current annual allocation</small>
-                <strong>{money(43936)}</strong>
+                <p className="eyebrow dark">What the official guidance says</p>
+                <h2>The calculation allows these exclusions.</h2>
               </div>
-              <span className="decision-arrow" aria-hidden="true">→</span>
+              <p>
+                Fannie Mae and Freddie Mac measure the annual replacement-reserve
+                allocation against annual budgeted assessment income—not total
+                expenditures. Their guidance permits specific income to be left out.
+              </p>
+            </div>
+
+            <div className="guidance-grid">
+              <article className="formula-card">
+                <p>Agency calculation</p>
+                <div className="formula-line">
+                  <strong>Annual replacement-reserve allocation</strong>
+                  <span aria-hidden="true">÷</span>
+                  <strong>Annual budgeted assessment income</strong>
+                </div>
+                <b>Must equal at least 15%</b>
+              </article>
+
+              <article className="exclusions-card">
+                <p>Income that may be excluded</p>
+                <ul>
+                  <li>Utility pass-through income, including cable or internet</li>
+                  <li>Special-assessment income</li>
+                  <li>Income allocated to reserve accounts</li>
+                  <li>Qualifying incidental income</li>
+                </ul>
+              </article>
+            </div>
+
+            <div className="pass-through-proof">
+              <div className="proof-intro">
+                <p className="eyebrow dark">What our financials show</p>
+                <h3>Cable and sewer behave like pass-throughs.</h3>
+                <p>
+                  In the January–June 2026 budget, the amount collected from owners
+                  almost exactly offsets the corresponding provider expense.
+                </p>
+              </div>
+
+              <div className="proof-cards" aria-label="Cable and sewer budget evidence">
+                <article>
+                  <div><span>Cable</span><small>Near 1:1 offset</small></div>
+                  <dl>
+                    <div><dt>Collected</dt><dd>{money(23976.5, 2)}</dd></div>
+                    <div><dt>Provider expense</dt><dd>{money(23976, 2)}</dd></div>
+                  </dl>
+                </article>
+                <article>
+                  <div><span>Sewer</span><small>Near 1:1 offset</small></div>
+                  <dl>
+                    <div><dt>Collected</dt><dd>{money(31244, 2)}</dd></div>
+                    <div><dt>Provider expense</dt><dd>{money(31244.48, 2)}</dd></div>
+                  </dl>
+                </article>
+              </div>
+            </div>
+
+            <aside className="record-callout">
+              <span className="record-icon" aria-hidden="true">✓</span>
               <div>
-                <small>15% annual requirement</small>
-                <strong>{money(41023.8, 2)}</strong>
+                <p>Make the record airtight</p>
+                <h3>Confirm the classification in writing.</h3>
+                <p>
+                  The association should obtain a short written statement from
+                  management or its accountant confirming that cable and recurring
+                  sewer collections merely offset the corresponding provider charges.
+                </p>
+                <small>
+                  The agency rules permit these exclusions; the reviewing lender makes
+                  the final project-eligibility determination.
+                </small>
               </div>
-              <div className="decision-gap">
-                <small>Amount above 15%</small>
-                <strong>{money(2912.2, 2)}</strong>
-              </div>
-            </div>
-          </section>
-
-          <section className="section scenarios-section shell" id="numbers">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow dark">What it costs</p>
-            <h2>{money(0, 2)} additional per owner per quarter.</h2>
-          </div>
-          <p>
-            The current reserve allocation already exceeds the 15% line-item minimum,
-            so no new owner charge is needed for this requirement.
-          </p>
-        </div>
-
-        <div className="scenario-output fixed-answer">
-          <div className="scenario-summary">
-            <p className="result-kicker">The owner impact</p>
-            <strong className="result-gap">{money(0, 2)}</strong>
-            <p className="result-label">additional per owner per quarter</p>
-            <div className="result-pill">
-              <span>Current funding already clears 15%</span>
-              <span>No equal-share assumption needed</span>
-            </div>
-          </div>
-
-          <div className="math-card" aria-label="15 percent reserve calculation">
-            <div>
-              <span>Regular HOA + COA assessments</span>
-              <b>{money(194150)}</b>
-            </div>
-            <div>
-              <span>+ Insurance assessments</span>
-              <b>{money(79342)}</b>
-            </div>
-            <div>
-              <span>Eligible assessment income</span>
-              <b>{money(273492)}</b>
-            </div>
-            <div className="math-symbol">× 15% = {money(41023.8, 2)}</div>
-            <div className="math-symbol">Current reserves: {money(43936)}</div>
-            <div className="math-total">
-              <span>Amount above the minimum</span>
-              <b>{money(2912.2, 2)}</b>
-            </div>
-          </div>
-        </div>
-
-        <p className="calculation-note">
-          Cable ({money(47953)}), sewer ({money(62488)}), special-assessment income,
-          reserve-account income, and incidental income are excluded as permitted.
-          Insurance assessments remain included as operating-assessment income.
-        </p>
+            </aside>
           </section>
         </div>
       </div>
@@ -254,18 +265,18 @@ export default function Home() {
           <div className="source-links">
             <span>Official guidance</span>
             <a
-              href="https://singlefamily.fanniemae.com/media/document/pdf/lender-letter-ll-2026-03-updates-project-standards-property-insurance-requirements"
+              href="https://selling-guide.fanniemae.com/sel/b4-2.2-02/full-review-process"
               target="_blank"
               rel="noreferrer"
             >
-              Fannie Mae LL-2026-03 ↗
+              Fannie Mae Full Review Guide ↗
             </a>
             <a
-              href="https://guide.freddiemac.com/ci/okcsFattach/get/1010547_3"
+              href="https://guide.freddiemac.com/app/servicing/section/5701.6"
               target="_blank"
               rel="noreferrer"
             >
-              Freddie Mac Bulletin 2026-C ↗
+              Freddie Mac Guide §5701.6 ↗
             </a>
           </div>
         </div>

@@ -503,7 +503,8 @@ summary:focus-visible {
   scroll-margin-top: var(--header-height);
 }
 
-.scenarios-section {
+.scenarios-section,
+.research-section {
   position: relative;
   z-index: 2;
   background: rgb(245 240 230 / 96%);
@@ -512,6 +513,270 @@ summary:focus-visible {
     0 -28px 80px rgb(3 17 14 / 20%);
   clip-path: inset(0 -100vmax);
   backdrop-filter: blur(12px);
+}
+
+.research-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.65fr);
+  gap: clamp(28px, 7vw, 100px);
+  align-items: end;
+}
+
+.research-heading h2 {
+  max-width: 850px;
+  margin: 0;
+  color: var(--evergreen-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.55rem, 5.5vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: -0.058em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.research-heading > p {
+  margin: 0;
+  color: #4d5b57;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.guidance-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.formula-card,
+.exclusions-card {
+  min-width: 0;
+  padding: clamp(28px, 4.5vw, 52px);
+  border-radius: 24px;
+}
+
+.formula-card {
+  color: white;
+  background:
+    radial-gradient(circle at 95% 5%, rgb(239 187 79 / 16%), transparent 35%),
+    var(--evergreen-850, #0b352d);
+}
+
+.formula-card > p,
+.exclusions-card > p,
+.record-callout > div > p:first-child {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 820;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.formula-line {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(14px, 3vw, 28px);
+  align-items: center;
+  margin-top: 30px;
+}
+
+.formula-line strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.formula-line span {
+  color: var(--gold);
+  font-size: 1.7rem;
+}
+
+.formula-card > b {
+  display: inline-block;
+  margin-top: 34px;
+  padding: 9px 13px;
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 999px;
+  color: rgb(255 255 255 / 76%);
+  font-size: 0.78rem;
+}
+
+.exclusions-card {
+  border: 1px solid #d7ded9;
+  background: rgb(255 255 255 / 58%);
+}
+
+.exclusions-card > p {
+  color: var(--evergreen-700);
+}
+
+.exclusions-card ul {
+  display: grid;
+  gap: 14px;
+  margin: 27px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.exclusions-card li {
+  position: relative;
+  padding-left: 28px;
+  color: #344641;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.exclusions-card li::before {
+  position: absolute;
+  top: 0.56em;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 5px rgb(214 166 59 / 13%);
+  content: "";
+}
+
+.pass-through-proof {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(34px, 7vw, 96px);
+  align-items: center;
+  margin-top: clamp(70px, 9vw, 116px);
+}
+
+.proof-intro h3,
+.record-callout h3 {
+  margin: 12px 0 0;
+  color: var(--evergreen-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.proof-intro > p:last-child {
+  margin: 24px 0 0;
+  color: #586762;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.proof-cards {
+  display: grid;
+  gap: 12px;
+}
+
+.proof-cards > article {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid #d1dbd6;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 66%);
+  box-shadow: 0 14px 38px rgb(9 43 36 / 6%);
+}
+
+.proof-cards article > div > span,
+.proof-cards article > div > small {
+  display: block;
+}
+
+.proof-cards article > div > span {
+  color: var(--evergreen-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+}
+
+.proof-cards article > div > small {
+  margin-top: 5px;
+  color: var(--evergreen-700);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-cards dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.proof-cards dl > div {
+  min-width: 0;
+  padding-left: 16px;
+  border-left: 1px solid #d5ddd9;
+}
+
+.proof-cards dt {
+  color: #697671;
+  font-size: 0.66rem;
+}
+
+.proof-cards dd {
+  margin: 5px 0 0;
+  color: var(--evergreen-950);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 760;
+  letter-spacing: -0.035em;
+}
+
+.record-callout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 40px);
+  margin-top: clamp(68px, 9vw, 112px);
+  padding: clamp(28px, 5vw, 58px);
+  border: 1px solid rgb(205 153 45 / 44%);
+  border-radius: 26px;
+  background: linear-gradient(135deg, #fff8e8, #f4e6c5);
+  box-shadow: 0 24px 58px rgb(44 35 12 / 10%);
+}
+
+.record-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  place-items: center;
+  color: var(--gold);
+  background: var(--evergreen-900);
+  font-size: 1.35rem;
+  font-weight: 850;
+}
+
+.record-callout h3 {
+  font-size: clamp(2rem, 4.2vw, 3.7rem);
+}
+
+.record-callout > div > p:nth-of-type(2) {
+  max-width: 860px;
+  margin: 24px 0 0;
+  color: #33433e;
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.record-callout small {
+  display: block;
+  max-width: 850px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(79 89 74 / 18%);
+  color: #65706b;
+  font-size: 0.72rem;
+  line-height: 1.55;
 }
 
 .section-heading,
@@ -1187,10 +1452,42 @@ summary:focus-visible {
   }
 
   .section-heading,
+  .research-heading,
   .steps-heading,
   .recommendation,
   .motion-grid,
   .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guidance-grid,
+  .pass-through-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .guidance-grid {
+    margin-top: 38px;
+  }
+
+  .formula-line {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-line span {
+    transform: rotate(90deg);
+    justify-self: start;
+  }
+
+  .proof-cards > article {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-cards dl > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .record-callout {
     grid-template-columns: 1fr;
   }
 
@@ -1314,6 +1611,9 @@ summary:focus-visible {
   }
 
   .recommendation,
+  .guidance-grid,
+  .pass-through-proof,
+  .record-callout,
   .steps-grid li,
   .watchouts article,
   .motion-grid,
